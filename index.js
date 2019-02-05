@@ -1,9 +1,8 @@
 
 const personalInfo = document.getElementById('personal-info');
-const name = document.getElementById('name');
+const applicantName = document.getElementById('name');
 const nickName = document.getElementById('nick-name');
 const preferedName = document.getElementByI('name-preference');
-const pizzaToppings = document.getElementById('pizza-toppings');
 const communicationPreference = document.getElementById('communication');
 const dachsund = document.getElementById('dachsund');
 const volumeLevel = document.getElementById('volume');
@@ -17,9 +16,30 @@ volumeLevel.addEventListener('change', function() {
 });
 
 
-
 personalInfo.addEventListener('submit', function() {
     console.log('submitted');
+    const pizzaToppings = [];
+
+    for(let i = 0; i < personalInfo.topping.length; i++) {
+        const name = personalInfo.topping[i];
+        if(name.checked){
+            pizzaToppings[i] = name.value;
+            console.log(pizzaToppings[i]);
+        }
+    }
+
+    const applicant = {
+        applicantName: applicantName.value,
+        nickName: nickName.value,
+        preferedName: preferedName.value,
+        pizzaToppings: pizzaToppings.value,
+        communicationPreference: communicationPreference.value,
+        dachsund: dachsund.value,
+        volumeLevel: volumeLevel.nodeValue,
+        volumeDisplay: volumeDisplay.value,
+    };
+
+    console.log(applicant);
 });
 
   //create for loop to check boxes thare are checked in fieldsets
