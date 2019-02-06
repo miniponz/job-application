@@ -1,0 +1,19 @@
+* {
+    color: teal;
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
+fieldset {
+    margin: 10px;
+    border-radius: 15px;
+}
+
+button, input {
+    background-color: aliceblue;
+}
+
+select {
+    background-color: aliceblue;
+
+}
