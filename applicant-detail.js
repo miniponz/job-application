@@ -9,11 +9,10 @@ const volumeLevel = document.getElementById('volume-level');
 const json = window.localStorage.getItem('applicant');
 const populateApplicant = JSON.parse(json);
 
-console.log(json);
 
 name.textContent = populateApplicant.applicantName;
 nickName.textContent = populateApplicant.nickName;
-preferedName.textContent = populateApplicant.preferedName;
+preferedName.textContent = populateApplicant.namePreference;
 pizzaToppings.textContent = populateApplicant.pizzaToppings.join(' ');
 comPreference.textContent = populateApplicant.communicationPreference;
 dachsund.textContent = populateApplicant.dachsund;

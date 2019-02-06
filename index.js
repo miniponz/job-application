@@ -2,7 +2,6 @@
 const personalInfo = document.getElementById('personal-info');
 const applicantName = document.getElementById('name');
 const nickName = document.getElementById('nickname');
-const preferedName = document.getElementById('name-preference');
 const communicationPreference = document.getElementById('communication');
 const dachsund = document.getElementById('dachsund');
 const volumeLevel = document.getElementById('volume');
@@ -17,19 +16,20 @@ volumeLevel.addEventListener('change', function() {
 personalInfo.addEventListener('submit', function(event) {
     event.preventDefault();
     const pizzaToppings = [];
-
+    
     for(let i = 0; i < personalInfo.topping.length; i++) {
         const name = personalInfo.topping[i];
         if(name.checked){
             pizzaToppings[i] = name.value;
         }    
-        console.log(pizzaToppings[i]);
     }
+    
+    const namePreference = personalInfo.elements.names.value;
 
     const applicant = {
         applicantName: applicantName.value,
         nickName: nickName.value,
-        preferedName: preferedName.value,
+        namePreference: namePreference,
         pizzaToppings: pizzaToppings,
         communicationPreference: communicationPreference.value,
         dachsund: dachsund.value,
