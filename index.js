@@ -14,7 +14,7 @@ volumeLevel.addEventListener('change', function() {
 });
 
 
-personalInfo.addEventListener('submit', function() {
+personalInfo.addEventListener('submit', function(event) {
     event.preventDefault();
     const pizzaToppings = [];
 
@@ -22,22 +22,26 @@ personalInfo.addEventListener('submit', function() {
         const name = personalInfo.topping[i];
         if(name.checked){
             pizzaToppings[i] = name.value;
-            //console.log(pizzaToppings[i]);
-        }
+        }    
+        console.log(pizzaToppings[i]);
     }
 
     const applicant = {
         applicantName: applicantName.value,
         nickName: nickName.value,
         preferedName: preferedName.value,
-        pizzaToppings: pizzaToppings.value,
+        pizzaToppings: pizzaToppings,
         communicationPreference: communicationPreference.value,
         dachsund: dachsund.value,
-        volumeLevel: volumeLevel.nodeValue,
-        volumeDisplay: volumeDisplay.value,
+        volumeLevel: volumeLevel.value,
+      
     };
 
-    console.log(applicant);
+    window.location = 'thanks.html';
+
+    const serialize = JSON.stringify(applicant);
+    window.localStorage.setItem('applicant', serialize);
+
 });
 
   //create for loop to check boxes thare are checked in fieldsets
