@@ -20,7 +20,7 @@ personalInfo.addEventListener('submit', function(event) {
     for(let i = 0; i < personalInfo.topping.length; i++) {
         const name = personalInfo.topping[i];
         if(name.checked){
-            pizzaToppings[i] = name.value;
+            pizzaToppings.push(name.value);
         }    
     }
     
@@ -37,15 +37,17 @@ personalInfo.addEventListener('submit', function(event) {
       
     };
 
+    let applicants = [];
+    const jsonString = window.localStorage.getItem('applicants');
+    if(jsonString){
+        applicants = JSON.parse(jsonString);
+    }
+    
+    applicants.push(applicant);
+    
+
+    const serialize = JSON.stringify(applicants);
+    window.localStorage.setItem('applicants', serialize);
+    
     window.location = 'thanks.html';
-
-    const serialize = JSON.stringify(applicant);
-    window.localStorage.setItem('applicant', serialize);
-
 });
-
-  //create for loop to check boxes thare are checked in fieldsets
-
-  //console log info from form
-
-  //create the application object doodad.

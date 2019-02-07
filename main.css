@@ -2,6 +2,16 @@
     color: teal;
     background-color: blanchedalmond;
     text-align: center;
+    font-family: "Courier New", Courier, monospace;
+}
+
+a {
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+h1 {
+    text-decoration: underline;
 }
 
 fieldset {
@@ -11,9 +21,41 @@ fieldset {
 
 button, input {
     background-color: aliceblue;
+    border-radius: 16px;
+    font-size: 15px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 select {
     background-color: aliceblue;
 
+}
+
+#app-detail {
+    margin: auto;
+
+}
+
+dd, dt {
+    display: inline-block;
+    text-align: left;
+}
+
+dt {
+    text-decoration: underline;
+}
+
+table {
+    text-align: left;
+    border: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+thead {
+    text-decoration:underline;
+}
+
+td {
+    padding: 5px;
 }
