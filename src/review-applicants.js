@@ -23,7 +23,7 @@ for(let i = 0; i < applicants.length; i++) {
     tr.appendChild(tdNickName);
 
     const tdNamePreference = document.createElement('td');
-    tdNamePreference.textContent = clubApplicant.tdNamePreference;
+    tdNamePreference.textContent = clubApplicant.namePreference;
     tr.appendChild(tdNamePreference);
 
     const tdPizzaToppings = document.createElement('td');
