@@ -15,8 +15,11 @@ for(let i = 0; i < applicants.length; i++) {
     tbody.appendChild(tr);
 
     const tdName = document.createElement('td');
-    tdName.textContent = clubApplicant.applicantName;
     tr.appendChild(tdName);
+    const link = document.createElement('a');
+    tdName.appendChild(link);
+    link.textContent = clubApplicant.applicantName;
+    link.href = 'applicant-detail.html?name=' + encodeURIComponent(clubApplicant.applicantName);
 
     const tdNickName = document.createElement('td');
     tdNickName.textContent = clubApplicant.nickName;

@@ -15,11 +15,16 @@ h1 {
 }
 
 h3 {
-    color: maroon;
+    color: #b71946;
 }
 
 fieldset {
     margin: 10px;
+    border-radius: 15px;
+}
+
+legend {
+    background-color: aliceblue;
     border-radius: 15px;
 }
 
