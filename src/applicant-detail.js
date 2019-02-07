@@ -9,11 +9,31 @@ const volumeLevel = document.getElementById('volume-level');
 const jsonString = window.localStorage.getItem('applicants');
 
 let populateApplicant = [];
+let applicants = [];
 if(jsonString){
-    const applicants = JSON.parse(jsonString);
-    populateApplicant = applicants[applicants.length - 1];
+    applicants = JSON.parse(jsonString);
+}
+else {
+    window.location = '/';
 }
 
+const searchParam = new URLSearchParams(window.location.search);
+const nameToFind = searchParam.get('applicantName');
+
+if(nameToFind){
+    for(let i = 0; i < applicants.length; i++){
+        let currentApplicant = applicants[i];
+        
+        if(currentApplicant.applicantName === nameToFind){
+            populateApplicant = currentApplicant;
+            break;
+        }
+        else {
+            populateApplicant = applicants[applicants.length - 1];
+            
+        }
+    }
+}
 
 name.textContent = populateApplicant.applicantName;
 nickName.textContent = populateApplicant.nickName;

@@ -19,7 +19,7 @@ for(let i = 0; i < applicants.length; i++) {
     const link = document.createElement('a');
     tdName.appendChild(link);
     link.textContent = clubApplicant.applicantName;
-    link.href = 'applicant-detail.html?name=' + encodeURIComponent(clubApplicant.applicantName);
+    link.href = 'applicant-detail.html?applicantName=' + encodeURIComponent(clubApplicant.applicantName);
 
     const tdNickName = document.createElement('td');
     tdNickName.textContent = clubApplicant.nickName;
