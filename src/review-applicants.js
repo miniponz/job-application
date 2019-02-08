@@ -1,3 +1,4 @@
+const sortForm = document.getElementById('sort-applicants');
 const jsonString = window.localStorage.getItem('applicants');
 
 let applicants = [];
@@ -48,6 +49,12 @@ for(let i = 0; i < applicants.length; i++) {
 
 }
 
+sortForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    applicants.sort();
+    console.log(applicants);
+});
+
 //function to sort Data in review-applicants table:
 
 
@@ -55,3 +62,5 @@ for(let i = 0; i < applicants.length; i++) {
     console.log(name1);
     console.log(name2)
 }*/
+
+//https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
