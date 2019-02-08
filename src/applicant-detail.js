@@ -18,7 +18,7 @@ else {
 }
 
 const searchParam = new URLSearchParams(window.location.search);
-const nameToFind = searchParam.get('applicantName');
+const nameToFind = searchParam.get('applicantName', 'number');
 
 if(nameToFind){
     for(let i = 0; i < applicants.length; i++){
