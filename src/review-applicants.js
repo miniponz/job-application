@@ -51,7 +51,7 @@ for(let i = 0; i < applicants.length; i++) {
 //function to sort Data in review-applicants table:
 
 
-applicants.sort(function(name1, name2)) {
+/*applicants.sort(function(name1, name2)) {
     console.log(name1);
     console.log(name2)
-}
+}*/
