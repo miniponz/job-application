@@ -47,3 +47,11 @@ for(let i = 0; i < applicants.length; i++) {
     tr.appendChild(tdVolumeLevel);
 
 }
+
+//function to sort Data in review-applicants table:
+
+
+applicants.sort(function(name1, name2)) {
+    console.log(name1);
+    console.log(name2)
+}
