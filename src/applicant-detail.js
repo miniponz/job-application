@@ -8,7 +8,7 @@ const volumeLevel = document.getElementById('volume-level');
 
 const jsonString = window.localStorage.getItem('applicants');
 
-let populateApplicant = [];
+let populateApplicant = null;
 let applicants = [];
 if(jsonString){
     applicants = JSON.parse(jsonString);
@@ -18,22 +18,23 @@ else {
 }
 
 const searchParam = new URLSearchParams(window.location.search);
-const nameToFind = searchParam.get('applicantName', 'number');
-
+const nameToFind = searchParam.get('applicantName');
+console.log(nameToFind);
 if(nameToFind){
     for(let i = 0; i < applicants.length; i++){
         let currentApplicant = applicants[i];
+        console.log(currentApplicant);
         
         if(currentApplicant.applicantName === nameToFind){
             populateApplicant = currentApplicant;
             break;
         }
-        else {
-            populateApplicant = applicants[applicants.length - 1];
-            
-        }
     }
 }
+else {
+    populateApplicant = applicants[applicants.length - 1];          
+}
+//console.log(populateApplicant);
 
 name.textContent = populateApplicant.applicantName;
 nickName.textContent = populateApplicant.nickName;
