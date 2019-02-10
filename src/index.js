@@ -44,6 +44,7 @@ personalInfo.addEventListener('submit', function(event) {
     }
     
     applicants.push(applicant);
+    applicant.number = String(applicants.length);
     
 
     const serialize = JSON.stringify(applicants);
