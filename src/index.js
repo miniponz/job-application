@@ -43,7 +43,7 @@ personalInfo.addEventListener('submit', function(event) {
         applicants = JSON.parse(jsonString);
     }
     
-    applicant.number = applicants.length;
+    applicant.number = String(applicants.length);
     applicants.push(applicant);
    
     

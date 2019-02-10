@@ -18,16 +18,14 @@ else {
 }
 
 const searchParam = new URLSearchParams(window.location.search);
-const nameToFind = searchParam.get('applicantName');
 const numberToFind = searchParam.get('number');
-console.log(nameToFind);
 console.log(numberToFind);
 
-if(nameToFind){
+if(numberToFind){
     for(let i = 0; i < applicants.length; i++){
         let currentApplicant = applicants[i];
-        console.log(currentApplicant);
-        if(currentApplicant.applicantName === nameToFind){
+        console.log(currentApplicant.number);
+        if(currentApplicant.number === numberToFind){
             populateApplicant = currentApplicant;
             console.log('match');
             break;
