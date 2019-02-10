@@ -11,7 +11,6 @@ const tbody = document.getElementById('club-applicants');
 
 for(let i = 0; i < applicants.length; i++) {
     const clubApplicant = applicants[i];
-    const order = [i];
 
     const tr = document.createElement('tr');
     tbody.appendChild(tr);
@@ -21,7 +20,7 @@ for(let i = 0; i < applicants.length; i++) {
     const link = document.createElement('a');
     tdName.appendChild(link);
     link.textContent = clubApplicant.applicantName;
-    link.href = 'applicant-detail.html?applicantName=' + encodeURIComponent(clubApplicant.applicantName) + '?number=' + encodeURIComponent(order);
+    link.href = 'applicant-detail.html?applicantName=' + encodeURIComponent(clubApplicant.applicantName) + '&number=' + encodeURIComponent(clubApplicant.number);
 
     const tdNickName = document.createElement('td');
     tdNickName.textContent = clubApplicant.nickName;

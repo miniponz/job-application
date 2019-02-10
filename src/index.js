@@ -43,11 +43,13 @@ personalInfo.addEventListener('submit', function(event) {
         applicants = JSON.parse(jsonString);
     }
     
+    applicant.number = applicants.length;
     applicants.push(applicant);
+   
     
-
     const serialize = JSON.stringify(applicants);
     window.localStorage.setItem('applicants', serialize);
     
     window.location = 'thanks.html';
 });
+
